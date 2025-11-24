@@ -179,9 +179,9 @@
                     apiKeysHtml = user.apikeys.map(k => {
                         const statusClass = k.outofdate ? 'status-inactive' : 'status-active';
                         const statusText = k.outofdate ? 'Inactive' : 'Active';
-                        return <li>${k.key.substring(0, 8)}... <span class="${statusClass}">(${statusText})</span></li>;
+                        return `<li>${k.key.substring(0, 8)}... <span class="${statusClass}">(${statusText})</span></li>`;
                     }).join('');
-                    apiKeysHtml = <ul>${apiKeysHtml}</ul>;
+                    apiKeysHtml = `<ul>${apiKeysHtml}</ul>`;
                 }
                 // --- Akhir logika list key ---
 
@@ -288,8 +288,8 @@
                             <td>${k.status_inactive}</td>
                             <td class="actions">
                                 ${k.status_inactive === 'Active' ? 
-                                    <button class="btn-warning" onclick="setKeyStatus(${k.key_id}, true)">Deactivate</button> : 
-                                    <button class="btn-success" onclick="setKeyStatus(${k.key_id}, false)">Activate</button>
+                                    `<button class="btn-warning" onclick="setKeyStatus(${k.key_id}, true)">Deactivate</button>` : 
+                                    `<button class="btn-success" onclick="setKeyStatus(${k.key_id}, false)">Activate</button>`
                                 }
                                 <button class="btn-danger" onclick="deleteApiKey(${k.key_id})">Delete</button>
                             </td>

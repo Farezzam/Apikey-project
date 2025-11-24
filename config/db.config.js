@@ -1,9 +1,12 @@
+// Mengambil konfigurasi dari file .env
+require('dotenv').config();
+
 module.exports = {
   HOST: process.env.DB_HOST,
   USER: process.env.DB_USER,
   PASSWORD: process.env.DB_PASSWORD,
   DB: process.env.DB_NAME,
-  PORT: process.env.DB_PORT || 3307, // <--- TAMBAHKAN INI (atau ambil dari .env)
+  PORT: process.env.DB_PORT || 3308, // <--- TAMBAHKAN INI (atau ambil dari .env)
   dialect: "mysql",
   pool: {
     max: 5,
